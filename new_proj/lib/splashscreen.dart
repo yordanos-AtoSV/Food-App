@@ -34,7 +34,7 @@ class SplashScreen extends StatelessWidget {
                 'YERO',
                 style: TextStyle(
                   fontSize: 35,
-                  fontFamily: "fonts/Bangers-Regular.ttf",
+                  fontFamily: "Bangers",
                   fontWeight: FontWeight.bold,
                   letterSpacing: 1.0,
                   color: Color.fromARGB(255, 237, 78, 10),
@@ -45,7 +45,7 @@ class SplashScreen extends StatelessWidget {
               Text(
                 "food App",
                 style: TextStyle(
-                  fontFamily: "fonts/UbuntuMono-Regular.ttf",
+                  fontFamily: "UbuntuMono",
                   fontWeight: FontWeight.bold,
                   letterSpacing: 2.0,
                   color: Color.fromARGB(255, 241, 237, 232),

@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
         splash: SplashScreen(), 
         nextScreen: SignIn(),
         splashTransition: SplashTransition.fadeTransition,
-        duration: 10000,)
+        duration: 3000,)
 
     );
   }

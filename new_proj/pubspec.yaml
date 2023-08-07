@@ -88,6 +88,9 @@ flutter:
     - family: UbuntuMono
       fonts:
         - asset: fonts/UbuntuMono-Regular.ttf
+    - family: IBMPlexSans
+      fonts:
+        - asset: fonts/IBMPlexSans-Bold.ttf
 
   #
   # For details regarding fonts from package dependencies,
