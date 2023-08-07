@@ -9,7 +9,7 @@ class SignIn extends StatelessWidget {
             body: Container(
       decoration: const BoxDecoration(
         image: DecorationImage(
-          image: AssetImage('assets/background.jpg'),
+          image: AssetImage('assets/cover.jpg'),
           fit: BoxFit.cover,
         ),
       ),
@@ -20,7 +20,7 @@ class SignIn extends StatelessWidget {
             Icon(
               Icons.fastfood,
               size: 48,
-              color: Colors.white,
+              color: Color.fromARGB(255, 27, 25, 25),
             ),
             Text(
               'sign in',
@@ -38,7 +38,7 @@ class SignIn extends StatelessWidget {
                 fontFamily: "fonts/UbuntuMono-Regular.ttf",
                 fontWeight: FontWeight.bold,
                 letterSpacing: 2.0,
-                color: Color.fromARGB(255, 255, 254, 253),
+                color: Color.fromARGB(255, 26, 25, 25),
               ),
             )
           ],

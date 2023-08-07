@@ -11,11 +11,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      
       home: AnimatedSplashScreen(
         splash: SplashScreen(), 
         nextScreen: SignIn(),
         splashTransition: SplashTransition.fadeTransition,
-        duration: 3000,)
+        duration: 10000,)
+
     );
   }
 }
