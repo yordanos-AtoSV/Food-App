@@ -47,7 +47,6 @@ class ForgotPassword extends StatelessWidget {
                       color: Color.fromARGB(255, 18, 17, 17),
                     ),
                   ),
-
                 ],
               ),
             ),
@@ -65,9 +64,10 @@ class ForgotPassword extends StatelessWidget {
                 String? myNullableString = value;
 
                 if (myNullableString != null) {
-                 if (!RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$').hasMatch(myNullableString)){
+                  if (!RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$')
+                      .hasMatch(myNullableString)) {
                     return 'Please enter a valid email address';
-                 }
+                  }
                 }
                 return null;
               },
@@ -95,7 +95,6 @@ class ForgotPassword extends StatelessWidget {
                 style: TextStyle(fontSize: 16.0),
               ),
             ),
-            
           ],
         ),
       ),

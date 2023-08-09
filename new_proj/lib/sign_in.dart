@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'forgot_password.dart';
+import 'sign_up.dart';
 
 class SignIn extends StatelessWidget {
   @override
@@ -46,8 +47,10 @@ class SignIn extends StatelessWidget {
                   ]),
                   TextButton(
                     onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => ForgotPassword()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ForgotPassword()));
                     },
                     child: const Text(
                       'Forgot Password?',
@@ -80,7 +83,12 @@ class SignIn extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Text("Don't have an account?"),
-                TextButton(onPressed: () {}, child: const Text("Sign Up"))
+                TextButton(onPressed: () {
+                  Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => SignUp()));
+                }, child: const Text("Sign Up"))
               ],
             )
           ],
