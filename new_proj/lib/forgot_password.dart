@@ -20,12 +20,42 @@ class ForgotPassword extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(height: 100.0),
+            const SizedBox(height: 80.0),
+            Container(
+              padding: const EdgeInsets.all(10.0),
+              margin: const EdgeInsets.all(10.0),
+              child: Column(
+                children: const [
+                  Text(
+                    'Please, enter your eamil address. you',
+                    style: TextStyle(
+                      fontSize: 18.0,
+                      color: Color.fromARGB(255, 18, 17, 17),
+                    ),
+                  ),
+                  Text(
+                    'will recieve a link to create a new',
+                    style: TextStyle(
+                      fontSize: 18.0,
+                      color: Color.fromARGB(255, 18, 17, 17),
+                    ),
+                  ),
+                  Text(
+                    'password via email',
+                    style: TextStyle(
+                      fontSize: 18.0,
+                      color: Color.fromARGB(255, 18, 17, 17),
+                    ),
+                  ),
+
+                ],
+              ),
+            ),
             TextFormField(
               keyboardType: TextInputType.emailAddress,
               decoration: const InputDecoration(
                 labelText: 'Email',
-                hintText: 'Enter your email',
+                hintText: 'Email Address',
                 border: OutlineInputBorder(),
               ),
               validator: (value) {
