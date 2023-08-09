@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'forgot_password.dart';
 
-class SignIn extends StatelessWidget {
+class ForgotPassword extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,7 +12,7 @@ class SignIn extends StatelessWidget {
             const SizedBox(height: 100.0),
             const Center(
               child: Text(
-                "Sign In",
+                "Forgot Password",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 22.0,
@@ -23,40 +22,30 @@ class SignIn extends StatelessWidget {
             ),
             const SizedBox(height: 100.0),
             TextFormField(
+              keyboardType: TextInputType.emailAddress,
               decoration: const InputDecoration(
+                labelText: 'Email',
+                hintText: 'Enter your email',
                 border: OutlineInputBorder(),
-                labelText: 'Moblie Number',
               ),
+              validator: (value) {
+                if (value?.isEmpty ?? true) {
+                  return 'Please enter your email';
+                }
+                String? myNullableString = value;
+
+                if (myNullableString != null) {
+                 if (!RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$').hasMatch(myNullableString)){
+                    return 'Please enter a valid email address';
+                 }
+                }
+                return null;
+              },
+              onSaved: (value) {
+                // Do something with the email value
+              },
             ),
             const SizedBox(height: 16.0),
-            TextFormField(
-              obscureText: true,
-              decoration: const InputDecoration(
-                border: OutlineInputBorder(),
-                labelText: 'Password',
-              ),
-            ),
-            Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(mainAxisSize: MainAxisSize.min, children: [
-                    Checkbox(value: false, onChanged: (value) {}),
-                    const Text('Remember Me'),
-                  ]),
-                  TextButton(
-                    onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => ForgotPassword()));
-                    },
-                    child: const Text(
-                      'Forgot Password?',
-                      style: TextStyle(
-                          color: Colors.black, fontWeight: FontWeight.normal),
-                    ),
-                  ),
-                ]),
-            const SizedBox(height: 24.0),
             ElevatedButton(
               onPressed: () {
                 // TODO: Implement login functionality
@@ -72,17 +61,11 @@ class SignIn extends StatelessWidget {
                     Color.fromARGB(255, 237, 78, 10)),
               ),
               child: const Text(
-                'Sign In',
+                'Send',
                 style: TextStyle(fontSize: 16.0),
               ),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Text("Don't have an account?"),
-                TextButton(onPressed: () {}, child: const Text("Sign Up"))
-              ],
-            )
+            
           ],
         ),
       ),
