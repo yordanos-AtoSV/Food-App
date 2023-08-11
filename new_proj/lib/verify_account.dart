@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:new_proj/welcome.dart';
 
 class VerifyAccount extends StatelessWidget {
   @override
@@ -103,7 +104,10 @@ class VerifyAccount extends StatelessWidget {
                 const SizedBox(height: 30.0),
                 ElevatedButton(
                   onPressed: () {
-                    // TODO: Implement login functionality
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Welcome()));
                   },
                   style: ButtonStyle(
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
