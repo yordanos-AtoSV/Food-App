@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:new_proj/verify_account.dart';
 
 class SignUp extends StatelessWidget {
   @override
@@ -61,49 +62,53 @@ class SignUp extends StatelessWidget {
                   obscureText: true,
                   decoration: const InputDecoration(
                     border: OutlineInputBorder(
-                        borderSide: BorderSide(
-                            color: Color.fromARGB(255, 184, 59, 59),
-                            width: 100.0)),
+                      borderSide: BorderSide(
+                        color: Color.fromARGB(255, 184, 59, 59),
+                        width: 100.0
+                      )
+                    ),
                     labelText: 'Password',
                   ),
                 ),
               ),
               const SizedBox(height: 16.0),
               RichText(
-                textAlign: TextAlign.center,
-                text: const TextSpan(
-                  text:
-                      'By continuing, I confirm that I have read and agree to the ',
-                  style: TextStyle(color: Colors.black),
-                  children: [
-                    TextSpan(
-                      text: 'terms and conditions',
-                      style: TextStyle(
-                        color: Color.fromARGB(255, 244, 97, 24),
-                      ),
-                      // recognizer: TapGestureRecognizer()
-                      //   ..onTap = () {
-                      //     // Handle terms and conditions link press
-                      //   },
+                  textAlign: TextAlign.center,
+                  text: const TextSpan(
+                    text: 'By continuing, I confirm that I have read and agree to the ',
+                    style: TextStyle(
+                      color: Colors.black
                     ),
-                    TextSpan(text: ' and '),
-                    TextSpan(
-                      text: 'privacy policy',
-                      style: TextStyle(
-                        color: Color.fromARGB(255, 244, 97, 24),
+                    children: [
+                      TextSpan(
+                        text: 'terms and conditions',
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 244, 97, 24),
+                        ),
+                        // recognizer: TapGestureRecognizer()
+                        //   ..onTap = () {
+                        //     // Handle terms and conditions link press
+                        //   },
                       ),
-                      // recognizer: TapGestureRecognizer()
-                      //   ..onTap = () {
-                      //     // Handle privacy policy link press
-                      //   },
-                    ),
-                  ],
-                ),
-              ),
+                      TextSpan(text: ' and '),
+                      TextSpan(
+                        text: 'privacy policy',
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 244, 97, 24),
+                        ),
+                        // recognizer: TapGestureRecognizer()
+                        //   ..onTap = () {
+                        //     // Handle privacy policy link press
+                        //   },
+                      ),
+                    ],
+                  ),
+),
               const SizedBox(height: 16.0),
               ElevatedButton(
                 onPressed: () {
-                  // TODO: Implement login functionality
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => VerifyAccount()));
                 },
                 style: ButtonStyle(
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -138,6 +143,7 @@ class SignUp extends StatelessWidget {
                   Expanded(
                     child: Divider(
                       color: Colors.black87,
+
                     ),
                   ),
                 ],
@@ -148,24 +154,28 @@ class SignUp extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
                   Expanded(
-                    child: Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10.0),
-                        border: Border.all(
-                            color: Color.fromARGB(255, 196, 193, 193)),
+                    child:Container(
+                    decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10.0),
+                            border: Border.all(
+                              color: Color.fromARGB(255, 196, 193, 193)
+                        
                       ),
+                    ),
                       child: Row(
                         children: [
                           const SizedBox(width: 75.0),
                           const SizedBox(height: 48.0),
+
                           Image.network(
+                                
                               'http://pngimg.com/uploads/google/google_PNG19635.png',
                               width: 35.0,
                               fit: BoxFit.cover),
                           const SizedBox(
-                            width: 5.0,
-                          ),
-                          TextButton(
+                    width: 5.0,
+                  ),
+                  TextButton(
                               onPressed: () {},
                               child: const Text(
                                 'Continue with Google',
@@ -175,7 +185,8 @@ class SignUp extends StatelessWidget {
                               ))
                         ],
                       ),
-                    ),
+                      
+                      ),
                   )
                 ],
               ),
@@ -188,8 +199,7 @@ class SignUp extends StatelessWidget {
                     child: Container(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10.0),
-                        border: Border.all(
-                            color: Color.fromARGB(255, 196, 193, 193)),
+                        border: Border.all(color: Color.fromARGB(255, 196, 193, 193)),
                       ),
                       child: Row(
                         children: [
@@ -202,13 +212,14 @@ class SignUp extends StatelessWidget {
                             width: 5.0,
                           ),
                           TextButton(
-                              onPressed: () {},
-                              child: const Text(
+                            onPressed: (){},
+                           child: const Text(
                                 'Continue with Facebook',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.black),
-                              ))
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black
+                              ),
+                           ))
                         ],
                       ),
                     ),
