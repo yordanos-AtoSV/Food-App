@@ -16,7 +16,7 @@ class ForgotPassword extends StatelessWidget {
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 22.0,
-                  fontFamily: 'IBMPlexSans',
+                  // fontFamily: 'IBMPlexSans',
                 ),
               ),
             ),
@@ -83,7 +83,7 @@ class ForgotPassword extends StatelessWidget {
               style: ButtonStyle(
                 shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                     RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20.0),
+                  borderRadius: BorderRadius.circular(10.0),
                 )),
                 padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
                     const EdgeInsets.all(16.0)),

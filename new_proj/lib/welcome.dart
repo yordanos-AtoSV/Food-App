@@ -30,7 +30,7 @@ class Welcome extends StatelessWidget {
                       Expanded(
                           child: Stack(children: [
                         const CircleAvatar(
-                          backgroundImage: NetworkImage("assets/avatar.jpg"),
+                          backgroundImage: AssetImage("assets/avatar.jpg"),
                           radius: 35.0,
                         ),
                         Positioned(
@@ -51,6 +51,42 @@ class Welcome extends StatelessWidget {
                       ]))
                     ]),
                   )
+                ],
+              ),
+              const SizedBox(height: 20.0),
+              Container(
+                color: Color.fromARGB(255, 255, 255, 255),
+                child: TextFormField(
+                  decoration: const InputDecoration(
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(20.0))
+                    ),
+                    prefixIcon: Icon(Icons.search),
+                    labelText: 'Search',
+                    labelStyle: TextStyle(
+                        fontWeight: FontWeight.w300
+                    )
+                  ),
+                ),
+              ),
+              const SizedBox(height: 20.0),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: const[
+                  Text("Popular",
+                  style: TextStyle(
+                    fontSize: 30.0,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: "WorkSans"
+                  ),
+                  ),
+                  SizedBox(width: 200),
+                  Text("All",
+                  style: TextStyle(
+                    fontWeight: FontWeight.w300,
+                    fontSize: 18,
+                    fontFamily: "WorkSans"
+                  ),)
                 ],
               )
             ],

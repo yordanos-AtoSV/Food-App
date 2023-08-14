@@ -19,7 +19,7 @@ class SignUp extends StatelessWidget {
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 22.0,
-                    fontFamily: 'IBMPlexSans',
+                    fontFamily: 'WorkSans',
                   ),
                 ),
               ),

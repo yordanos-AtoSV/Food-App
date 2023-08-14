@@ -83,16 +83,19 @@ flutter:
       fonts:
         - asset: fonts/Bangers-Regular.ttf
     
-    - family: CarterOne
+    - family: WorkSans
       fonts:
-        - asset: fonts/CarterOne-Regular.ttf
+        - asset: fonts/WorkSans-Regular.ttf
+        - asset: fonts/WorkSans-Medium.ttf
+        - asset: fonts/WorkSans-Light.ttf
+        - asset: fonts/WorkSans-Thin.ttf
+        - asset: fonts/WorkSans-Bold.ttf
+
+
+
+
     
-    - family: UbuntuMono
-      fonts:
-        - asset: fonts/UbuntuMono-Regular.ttf
-    - family: IBMPlexSans
-      fonts:
-        - asset: fonts/IBMPlexSans-Bold.ttf
+    
 
   #
   # For details regarding fonts from package dependencies,
