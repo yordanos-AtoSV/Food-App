@@ -16,7 +16,6 @@ class SplashScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: const [
                 Expanded(
-                 
                   child: Icon(
                     Icons.fastfood,
                     size: 48,
@@ -24,7 +23,6 @@ class SplashScreen extends StatelessWidget {
                   ),
                 ),
                 Expanded(
-                 
                   child: Text(
                     'YERO',
                     style: TextStyle(

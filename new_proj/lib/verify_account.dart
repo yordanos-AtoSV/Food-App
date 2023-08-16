@@ -27,12 +27,8 @@ class VerifyAccount extends StatelessWidget {
                 const SizedBox(height: 100.0),
                 Column(
                   children: const [
-                    Text(
-                      "We have sent 4 digit code"
-                    ),
-                    Text(
-                      "to your phone"
-                    )
+                    Text("We have sent 4 digit code"),
+                    Text("to your phone")
                   ],
                 ),
                 const SizedBox(height: 30.0),
@@ -42,72 +38,55 @@ class VerifyAccount extends StatelessWidget {
                   children: [
                     Flexible(
                       child: Container(
-                        width: 60.0,
-                   
-                        color: Colors.white,
-                        child: TextFormField(
-                          obscureText: false,
-                          decoration: const InputDecoration(
-                            border: OutlineInputBorder(
-                                ),
-                          ),
-                        
-                        )
-                        ),
-                    ),
-                    Flexible(
-                      child: Container(
+                          width: 60.0,
                           color: Colors.white,
-                        width: 60.0,
-                       
-
                           child: TextFormField(
                             obscureText: false,
                             decoration: const InputDecoration(
-                              border: OutlineInputBorder(
-                                  ),
+                              border: OutlineInputBorder(),
                             ),
                           )),
                     ),
                     Flexible(
                       child: Container(
                           color: Colors.white,
-                        width: 60.0,
-                    
-                        
+                          width: 60.0,
                           child: TextFormField(
                             obscureText: false,
                             decoration: const InputDecoration(
-                              border: OutlineInputBorder(
-                                  ),
+                              border: OutlineInputBorder(),
                             ),
                           )),
                     ),
                     Flexible(
                       child: Container(
                           color: Colors.white,
-                        width: 60.0,
-                
-
+                          width: 60.0,
                           child: TextFormField(
                             obscureText: false,
                             decoration: const InputDecoration(
-                              border: OutlineInputBorder(
-                                  ),
+                              border: OutlineInputBorder(),
                             ),
                           )),
                     ),
-                     
+                    Flexible(
+                      child: Container(
+                          color: Colors.white,
+                          width: 60.0,
+                          child: TextFormField(
+                            obscureText: false,
+                            decoration: const InputDecoration(
+                              border: OutlineInputBorder(),
+                            ),
+                          )),
+                    ),
                   ],
                 ),
-
                 const SizedBox(height: 30.0),
                 ElevatedButton(
                   onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => Welcome()));
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Welcome()));
                   },
                   style: ButtonStyle(
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -124,7 +103,7 @@ class VerifyAccount extends StatelessWidget {
                     style: TextStyle(fontSize: 16.0),
                   ),
                 ),
-        ],
+              ],
             ),
           ),
         ),

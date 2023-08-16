@@ -11,10 +11,10 @@ class Welcome extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              const Text("Welcome, Yordi \u{1F44B} ",
-              style: TextStyle(
-                fontFamily: "WorkSans"
-              ),),
+              const Text(
+                "Welcome, Yordi \u{1F44B} ",
+                style: TextStyle(fontFamily: "WorkSans"),
+              ),
               const SizedBox(height: 10.0),
               Row(
                 children: [
@@ -62,37 +62,36 @@ class Welcome extends StatelessWidget {
                 color: Color.fromARGB(255, 255, 255, 255),
                 child: TextFormField(
                   decoration: const InputDecoration(
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(20.0))
-                    ),
-                    prefixIcon: Icon(Icons.search),
-                    labelText: 'Search',
-                    labelStyle: TextStyle(
-                        fontWeight: FontWeight.w300,
-                        letterSpacing: 1,
-                        color: Colors.grey
-                    )
-                  ),
+                      border: OutlineInputBorder(
+                          borderRadius:
+                              BorderRadius.all(Radius.circular(20.0))),
+                      prefixIcon: Icon(Icons.search),
+                      labelText: 'Search',
+                      labelStyle: TextStyle(
+                          fontWeight: FontWeight.w300,
+                          letterSpacing: 1,
+                          color: Colors.grey)),
                 ),
               ),
               const SizedBox(height: 20.0),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.end,
-                children: const[
-                  Text("Popular",
-                  style: TextStyle(
-                    fontSize: 30.0,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: "WorkSans"
-                  ),
+                children: const [
+                  Text(
+                    "Popular",
+                    style: TextStyle(
+                        fontSize: 28.0,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: "WorkSans"),
                   ),
                   SizedBox(width: 200),
-                  Text("All",
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontFamily: "WorkSans",
-                    color: Colors.grey
-                  ),)
+                  Text(
+                    "All",
+                    style: TextStyle(
+                        fontSize: 18,
+                        fontFamily: "WorkSans",
+                        color: Colors.grey),
+                  )
                 ],
               ),
               const SizedBox(height: 20),
@@ -105,64 +104,65 @@ class Welcome extends StatelessWidget {
                       Container(
                         width: 200,
                         child: Card(
-                            elevation:4,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                            child: Column(
-                              children: [
-                                const ClipRRect(
-                                  borderRadius: BorderRadius.only(topLeft: Radius.circular(8), topRight: Radius.circular(8)),
-                                  child: Image(
-                                    fit: BoxFit.cover, 
-                                    image: AssetImage("assets/cover.jpg"),
-                                    ),
+                          elevation: 4,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          child: Column(
+                            children: [
+                              const ClipRRect(
+                                borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(8),
+                                    topRight: Radius.circular(8)),
+                                child: Image(
+                                  fit: BoxFit.cover,
+                                  image: AssetImage("assets/cover.jpg"),
                                 ),
-                                Padding(
-                                  padding: const EdgeInsets.all(8),
-                                  child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: [
-                                      const Text(
-                                        'chicken Fillet',
-                                        style: TextStyle(
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(8),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    const Text(
+                                      'chicken Fillet',
+                                      style: TextStyle(
                                           fontSize: 18,
                                           fontWeight: FontWeight.bold,
-                                          fontFamily: "WorkSans"
-                                        ),
+                                          fontFamily: "WorkSans"),
+                                    ),
+                                    Text(
+                                      'Description',
+                                      style: TextStyle(
+                                        color: Colors.grey[700],
                                       ),
-                                      Text(
-                                        'Description',
-                                        style: TextStyle(
-                                          color: Colors.grey[700],
-                                        ),
-                                      ),
-                                      Row(
-                                        children:  [
-                                          const Text("250 ETB"),
-                                          const SizedBox(width: 70),
-                                          Container(
-                                            decoration: BoxDecoration(borderRadius: BorderRadius.circular(8),
-                                            color:const  Color.fromARGB(
+                                    ),
+                                    Row(
+                                      children: [
+                                        const Text("250 ETB"),
+                                        const SizedBox(width: 70),
+                                        Container(
+                                          decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(8),
+                                              color: const Color.fromARGB(
                                                   255, 237, 78, 10)),
-                                              
-                                              child: IconButton(
-                                                  onPressed: () {
+                                          child: IconButton(
+                                            onPressed: () {
                                               // Add your button action here
                                             },
-                                                  icon: Icon(Icons.shopping_cart),
-                                                  color: Colors.white,
-                                              ),
-                                            ),
-                                          
-                                        ],
-                                      ),
-                                    ],
-                                  ),
+                                            icon: Icon(Icons.shopping_cart),
+                                            color: Colors.white,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
                                 ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
+                        ),
                       ),
                       Container(
                         width: 200,
@@ -357,6 +357,167 @@ class Welcome extends StatelessWidget {
                   ),
                 ),
               ),
+              const SizedBox(height: 20.0),
+              const Text("Meal Sets",
+              style: TextStyle(
+                fontFamily: "WorkSans",
+                fontSize: 28.0,
+                fontWeight: FontWeight.bold
+
+              ),),
+              Row(
+                children: [
+                  Expanded(
+                    child: SizedBox(
+                      width: 340,
+                      child: Card(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(25),
+                        ),
+                        child: Column(
+                          children: [
+                            const ClipRRect(
+                              borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(25),
+                                  topRight: Radius.circular(25),
+                                  bottomLeft: Radius.circular(25),
+                                  bottomRight: Radius.circular(25)
+                                  ),
+                              child: Image(
+                                fit: BoxFit.cover,
+                                image: AssetImage("assets/cover.jpg"),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(8),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                            const SizedBox(width: 20.0),
+
+                                      Expanded(
+                                        child: Column(
+                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            const Text(
+                                              'Meal A',
+                                              style: TextStyle(
+                                                  fontSize: 18,
+                                                  fontWeight: FontWeight.bold,
+                                                  fontFamily: "WorkSans"),
+                                            ),
+                                            Text(
+                                              'Lorem ipsum dolor sit amet',
+                                              style: TextStyle(
+                                                color: Colors.grey[700],
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      const SizedBox(width: 80.0),
+                                      Container(
+                                                                        decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(8),
+                                        color: const Color.fromARGB(
+                                            255, 237, 78, 10)),
+                                                                        child: IconButton(
+                                      onPressed: () {
+                                        // Add your button action here
+                                      },
+                                      icon: Icon(Icons.arrow_forward),
+                                      color: Colors.white,
+                                                                        ),
+                                                                      ),
+                                      
+                                    ],
+                                  ),
+                        
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+
+              ),
+              const SizedBox(height: 10.0),
+              Row(
+                children: [
+                  Expanded(
+                    child: SizedBox(
+                      width: 340,
+                      child: Card(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(25),
+                        ),
+                        child: Column(
+                          children: [
+                            const ClipRRect(
+                              borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(25),
+                                  topRight: Radius.circular(25),
+                                  bottomLeft: Radius.circular(25),
+                                  bottomRight: Radius.circular(25)),
+                              child: Image(
+                                fit: BoxFit.cover,
+                                image: AssetImage("assets/cover.jpg"),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(8),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  const SizedBox(width: 20.0),
+                                  Expanded(
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        const Text(
+                                          'Meal B',
+                                          style: TextStyle(
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.bold,
+                                              fontFamily: "WorkSans"),
+                                        ),
+                                        Text(
+                                          'Lorem ipsum dolor sit amet',
+                                          style: TextStyle(
+                                            color: Colors.grey[700],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  const SizedBox(width: 80.0),
+                                  Container(
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(8),
+                                        color: const Color.fromARGB(
+                                            255, 237, 78, 10)),
+                                    child: IconButton(
+                                      onPressed: () {
+                                        // Add your button action here
+                                      },
+                                      icon: Icon(Icons.arrow_forward),
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              
+              
             ],
           ),
         ),
