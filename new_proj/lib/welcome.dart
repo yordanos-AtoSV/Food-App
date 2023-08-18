@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import "meal_a.dart";
 
 class Welcome extends StatelessWidget {
   @override
@@ -428,7 +429,11 @@ class Welcome extends StatelessWidget {
                                               255, 237, 78, 10)),
                                       child: IconButton(
                                         onPressed: () {
-                                          // Add your button action here
+                                          Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      MealA()));
                                         },
                                         icon: Icon(Icons.arrow_forward),
                                         color: Colors.white,
