@@ -15,6 +15,12 @@ class _MealAState extends State<MealA> {
 
   final PageController _pageController = PageController(initialPage: 0);
   int _currentPage = 0;
+  bool isExpanded = false;
+  void toggleExpansion() {
+    setState(() {
+      isExpanded = !isExpanded;
+    });
+  }
 
   @override
   void dispose() {
@@ -98,7 +104,7 @@ class _MealAState extends State<MealA> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    SizedBox(width: 140),
+                    const SizedBox(width: 140),
                     Expanded(
                       child: Container(
                         height: 20, // Set the desired height of the dots
@@ -136,6 +142,35 @@ class _MealAState extends State<MealA> {
                       ),
                     ),
                   ],
+                ),
+                const SizedBox(height: 30),
+                const Text(
+                  "Description",
+                  style: TextStyle(
+                      fontFamily: "WorkSans",
+                      fontSize: 22,
+                      fontWeight: FontWeight.bold),
+                ),
+                Container(
+                  constraints: const BoxConstraints(maxHeight: double.infinity),
+                  child: Column(
+                    children: [
+                      Text(
+                        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                        overflow: isExpanded ? null : TextOverflow.ellipsis,
+                        maxLines: isExpanded ? null : 3,
+                        style: const TextStyle(color: Colors.black),
+                      ),
+                    ],
+                  ),
+                ),
+                InkWell(
+                  onTap: toggleExpansion,
+                  child: Text(
+                    isExpanded ? 'See Less' : 'See More',
+                    style: TextStyle(color: Color.fromARGB(255, 237, 78, 10),
+                    fontWeight: FontWeight.bold),
+                  ),
                 ),
               ],
             );
