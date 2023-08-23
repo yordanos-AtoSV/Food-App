@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import "package:new_proj/popular.dart";
 import "meal_a.dart";
 import "meal_b.dart";
 
@@ -78,17 +79,23 @@ class Welcome extends StatelessWidget {
                 ),
                 const SizedBox(height: 20.0),
                 Row(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: const [
-                    Text(
-                      "Popular",
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children:  [
+                    TextButton(
+                      onPressed: (){
+                          Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => Popular()));
+                      },
+                      child: const Text("Popular",
+                      
                       style: TextStyle(
-                          fontSize: 28.0,
+                          fontSize: 25.0,
                           fontWeight: FontWeight.bold,
-                          fontFamily: "WorkSans"),
-                    ),
-                    SizedBox(width: 200),
-                    Text(
+                          fontFamily: "WorkSans",
+                          color: Colors.black),
+                    ),),
+                    const SizedBox(width: 200),
+                    const Text(
                       "All",
                       style: TextStyle(
                           fontSize: 18,
