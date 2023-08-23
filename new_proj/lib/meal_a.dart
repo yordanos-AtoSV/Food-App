@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:new_proj/verify_account.dart';
 
 class MealA extends StatefulWidget {
   @override
@@ -16,6 +15,7 @@ class _MealAState extends State<MealA> {
   final PageController _pageController = PageController(initialPage: 0);
   int _currentPage = 0;
   bool isExpanded = false;
+  bool isSwiped = false;
   void toggleExpansion() {
     setState(() {
       isExpanded = !isExpanded;
@@ -60,31 +60,29 @@ class _MealAState extends State<MealA> {
                 const SizedBox(height: 10.0),
                 SizedBox(
                   height: 200,
-                  child: Expanded(
-                    child: AspectRatio(
-                      aspectRatio: 1.0,
-                      child: Container(
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(25)),
-                        child: IntrinsicHeight(
-                          child: PageView.builder(
-                              controller: _pageController,
-                              itemCount: images.length,
-                              onPageChanged: (int page) {
-                                setState(() {
-                                  _currentPage = page;
-                                });
-                              },
-                              itemBuilder: (BuildContext context, int index) {
-                                return ClipRRect(
-                                  borderRadius: BorderRadius.circular(25),
-                                  child: Image.asset(
-                                    images[index],
-                                    fit: BoxFit.cover,
-                                  ),
-                                );
-                              }),
-                        ),
+                  child: AspectRatio(
+                    aspectRatio: 1.0,
+                    child: Container(
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(25)),
+                      child: IntrinsicHeight(
+                        child: PageView.builder(
+                            controller: _pageController,
+                            itemCount: images.length,
+                            onPageChanged: (int page) {
+                              setState(() {
+                                _currentPage = page;
+                              });
+                            },
+                            itemBuilder: (BuildContext context, int index) {
+                              return ClipRRect(
+                                borderRadius: BorderRadius.circular(25),
+                                child: Image.asset(
+                                  images[index],
+                                  fit: BoxFit.cover,
+                                ),
+                              );
+                            }),
                       ),
                     ),
                   ),
@@ -168,11 +166,113 @@ class _MealAState extends State<MealA> {
                   onTap: toggleExpansion,
                   child: Text(
                     isExpanded ? 'See Less' : 'See More',
-                    style: const TextStyle(color: Color.fromARGB(255, 237, 78, 10),
-                    fontWeight: FontWeight.bold,
-                    fontFamily: "WorkSans"),
+                    style: const TextStyle(
+                        color: Color.fromARGB(255, 237, 78, 10),
+                        fontWeight: FontWeight.bold,
+                        fontFamily: "WorkSans"),
                   ),
                 ),
+                const SizedBox(height: 20),
+                Container(
+                  width: 200,
+                  height: 90,
+                  child: Stack(children: [
+                    Positioned.fill(
+                      child: GestureDetector(
+                        onHorizontalDragUpdate: (details) {
+                          setState(() {
+                            isSwiped = details.delta.dx < -10;
+                          });
+                        },
+                        onHorizontalDragEnd: (details) {
+                          setState(() {
+                            isSwiped = false;
+                          });
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(18),
+                            color: Color.fromARGB(255, 229, 228, 228),
+                          ),
+                          child: Row(children: [
+                            const SizedBox(
+                              width: 110,
+                              height: 90,
+                              child: ClipRRect(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(25)),
+                                child: Image(
+                                  fit: BoxFit.cover,
+                                  image: AssetImage("assets/cover.jpg"),
+                                ),
+                              ),
+                            ),
+                            const SizedBox(width: 10),
+                            Column(
+                              children: [
+                                const Text(
+                                  "starter",
+                                  style: TextStyle(
+                                      fontFamily: "WorkSans",
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                Text("Bacil minced pork"),
+                                SizedBox(height: 20),
+                                Row(
+                                  children: [
+                                    const Text(
+                                      "80 ETB",
+                                      style: TextStyle(
+                                          color:
+                                              Color.fromARGB(255, 237, 78, 10)),
+                                    ),
+                                    Container(
+                                      decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(25),
+                                          color: Color.fromARGB(
+                                              255, 198, 197, 197)),
+                                      child: Row(
+                                        children: [
+                                          const Text("- 1",
+                                              style: TextStyle(
+                                                  color: Colors.white)),
+                                          IconButton(
+                                            onPressed: () {
+                                              // Add your button action here
+                                            },
+                                            icon: Icon(Icons.plus_one),
+                                            color: Colors.white,
+                                          ),
+                                        ],
+                                      ),
+                                    )
+                                  ],
+                                )
+                              ],
+                            )
+                          ]),
+                        ),
+                      ),
+                    ),
+                    AnimatedPositioned(
+                      duration: Duration(milliseconds: 300),
+                      right: isSwiped ? 0 : -200,
+                      child: Container(
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(8),
+                            color: const Color.fromARGB(255, 237, 78, 10)),
+                        child: IconButton(
+                          onPressed: () {
+                            // Add your button action here
+                          },
+                          icon: Icon(Icons.shopping_cart),
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ]),
+                )
               ],
             );
           }),
